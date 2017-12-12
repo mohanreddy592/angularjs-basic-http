@@ -1,0 +1,37 @@
+
+<div>
+    <h2>My App</h2>
+    <div>
+        {{$ctrl.name}}
+    </div><br>
+    <div>
+        Filter By Name: <input type="text" ng-change="$ctrl.filterText()" ng-model="$ctrl.text" >
+    </div><br>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Comments</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cm in $ctrl.user_posts">
+                    <td>{{cm.name}}</td>
+                    <td>{{cm.email}}</td>
+                    <td>{{cm.body}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <h3>Repo Names</h3>
+            <ul ng-repeat="it in $ctrl.repoNames track by $index">
+                <li>{{$index + 1}} {{it}}</li>
+            </ul>
+        </div>
+        
+    </div>
+    
+</div>
